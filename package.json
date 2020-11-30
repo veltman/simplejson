@@ -1,0 +1,61 @@
+{
+  "name": "simplejson",
+  "publisher": "nveltman",
+  "displayName": "SimpleJSON",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.51.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:simplejson.format"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "simplejson.format",
+        "title": "Format JSON"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "simplejson.format",
+        "key": "ctrl+j",
+        "mac": "cmd+j",
+        "when": "editorTextFocus"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "simplejson.format",
+          "group": "1_modification"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "yarn run lint",
+    "test": "exit 0"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.3",
+    "@types/mocha": "^8.0.0",
+    "@types/node": "^12.11.7",
+    "@types/vscode": "^1.51.0",
+    "eslint": "^7.9.0",
+    "glob": "^7.1.6",
+    "mocha": "^8.1.3",
+    "typescript": "^4.0.2",
+    "vsce": "^1.81.1",
+    "vscode-test": "^1.4.0"
+  },
+  "dependencies": {
+    "json-stringify-pretty-compact": "^2.0.0"
+  }
+}
